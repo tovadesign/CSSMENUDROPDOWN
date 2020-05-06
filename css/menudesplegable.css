@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	height: 100vh;
+	font-family: Verdana;
+	background-image: url(../imgs/cabania.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+nav {
+	height: 50px;
+	background-color: black;
+	box-shadow: 1px 0 20px 5px brown;
+}
+
+nav ul:first-child {
+	display: flex;
+	justify-content: space-evenly;
+	height: 100%;
+	align-items: center;
+}
+nav ul li {
+	position: relative;
+}
+
+nav > ul > li {
+	animation-name: bajar;
+	animation-duration: 0.4s;
+	animation-delay: 0.5s;
+	animation-fill-mode: both;
+}
+
+@keyframes bajar {
+	0% {transform: translateY(-100px);}
+	100% {transform: translateY(0);}
+}
+
+nav ul li a {
+	color: beige;
+	line-height: 50px;
+}
+
+nav ul li a:hover {
+	color: brown;
+	transition: 0.3s;
+}
+
+nav ul li:hover > ul {
+	display: flex;
+	animation-name: aparecer;
+	animation-duration: 0.5s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes aparecer {
+	0% {opacity: 0;
+		z-index: -1}
+	100% {opacity: 1;
+		  z-index: 1;}
+}
+
+.titulos {
+	font-size: 18px;
+}
+
+nav ul ul {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 50px;
+	border-top: 1px solid brown;
+}
+
+nav ul ul li {
+	width: 110px;
+	border: 1px solid brown;
+	border-top: none;
+	background-color: black;
+	padding-left: 10px;
+}
+
+nav ul ul ul {
+	position: absolute;
+	left: 120px;
+	top: 0px;
+}
